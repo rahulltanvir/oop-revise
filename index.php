@@ -12,21 +12,66 @@
 // $details->age=32;
 // $details->parson();============class
 
+// class myclass{
+//     public $name;
+//     public $age;
+
+//     public function __construct($name, $age)
+//     {
+//         $this->name=$name;
+//         $this->age=$age;
+//     }
+
+//     public function details(){
+//         echo "Name: ". $this->name . "\n" ."Age:". $this->age;
+//     }
+// }
+// $data= new myclass("rahul", 32);
+// echo $data->details(); Construct====================
+
+// destruct=========
+
+// class myclass{
+//     public $filename;
+
+//     public function __construct($filename){
+//         $this->filename=$filename;
+//         echo " cons File name is :".$filename;
+//     }
+//     public function largefile(){
+//         echo "lar File name is :" .$this->filename;
+//     }
+
+//     public function __destruct()
+//     {
+//         echo "des File name is :" .$this->filename;
+//     }
+
+// }
+// $fileObj= new myclass("text.file ".'<br>');
+// $fileObj->largefile();
+
+
+
+// inheritance=======
+
 class myclass{
-    public $name;
-    public $age;
+    protected $name="rahul";
 
-    public function __construct($name, $age)
-    {
-        $this->name=$name;
-        $this->age=$age;
-    }
-
-    public function details(){
-        echo "Name: ". $this->name . "\n" ."Age:". $this->age;
+    protected function oldName(){
+        return $this->name;
     }
 }
-$data= new myclass("rahul", 32);
-echo $data->details();
+class man extends myclass{
+    public function bark () {
+        return $this->name. "say woof"."<br>";
 
+    }
+    public function nweName(){
+         return $this->oldName();
+    }
+}
+$result=new man();
+echo $result->bark();
+echo $result->nweName();
 ?>
