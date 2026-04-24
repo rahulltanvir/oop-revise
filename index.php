@@ -55,23 +55,20 @@
 
 // inheritance=======
 
-class myclass{
-    protected $name="rahul";
+class animal{
+    public $name;
 
-    protected function oldName(){
-        return $this->name;
+    public function eat(){
+        echo $this->name. "eating rice"."<br>";
     }
 }
-class man extends myclass{
-    public function bark () {
-        return $this->name. "say woof"."<br>";
-
-    }
-    public function nweName(){
-         return $this->oldName();
+class dog extends animal{
+    public function bark() {
+        echo $this->name. " say wooh"."<br>";
     }
 }
-$result=new man();
-echo $result->bark();
-echo $result->nweName();
+$result= new dog();
+$result->name="duddy";
+$result->eat();
+$result->bark();
 ?>
